@@ -46,9 +46,9 @@ void setup() {
 
 void loop() {
 
-  // Kiem tra neu co client ket noi
+  // Kiem tra server
   WiFiClient client = server.available();
-  if (!client) {
+  if (client==0) {
     return;
   }
 
@@ -86,10 +86,12 @@ void loop() {
   s += "<div class=\"col-md-2\"><input class=\"btn btn-block btn-lg btn-primary\" type=\"button\" value=\"On\" onclick=\"on()\"></div>";
   s += "<div class=\"col-md-2\"><input class=\"btn btn-block btn-lg btn-danger\" type=\"button\" value=\"life\" onclick=\"life()\"></div>";
   s += "<div class=\"col-md-2\"><input class=\"btn btn-block btn-lg btn-danger\" type=\"button\" value=\"Off\" onclick=\"off()\"></div>";
+  s += "<div class=\"col-md-2\"><input class=\"btn btn-block btn-lg btn-danger\" type=\"button\" value=\"Blink\" onclick=\"nhay()\"></div>";
   s += "</div></div>";
   s += "<script>function on() {$.get(\"/on\");}</script>";
   s += "<script>function off() {$.get(\"/off\");}</script>";
   s += "<script>function life() {$.get(\"/life\");}</script>";
+  s += "<script>function nhay() {$.get(\"/life\");}</script>";
 
   // Gui thong tin cho client
   client.print(s);

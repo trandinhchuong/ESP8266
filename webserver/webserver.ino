@@ -14,7 +14,7 @@ void setup() {
   }
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());  //Print the local IP
-  server.on("/mechasolution", []() 
+  server.on("/esp8266", []() //duong dan trang web
             {
     server.send(200, "text / plain", "<!DOCTYPE html><html><head><style></style></head><body><h2>Button</h2><p>This is example for button</p><button class=‘button’>Click me</button></body></html>");
   });

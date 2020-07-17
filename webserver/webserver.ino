@@ -1,9 +1,13 @@
 #include "ESP8266WiFi.h"
 #include "ESP8266WebServer.h"
 ESP8266WebServer server(80);
+
+const char* ssid = "ESP8266";        
+const char* password = "123456789"; 
+
 void setup() {
   Serial.begin(115200);
-  WiFi.begin("SSID", "PASSWORD");  //Connect to the WiFi network
+  WiFi.begin(ssid, password);  //Connect to the WiFi network
   while (WiFi.status() != WL_CONNECTED) {  //Wait for connection
     delay(500);
     Serial.println("Waiting to connect…");

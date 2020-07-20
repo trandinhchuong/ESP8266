@@ -27,7 +27,8 @@ void loop() {
 		// wait and then post again
 		delay(postingInterval);
 
-		float temp =analogRead(A0);
+		float vol =analogRead(A0);
+		float	temp=( vol * 5.0 / 1024.0 )* 100.0;
 		float humi =analogRead(A0);
 
 		if (client.connect(server, 80)) {

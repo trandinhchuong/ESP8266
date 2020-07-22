@@ -2,7 +2,7 @@
 #include <ESP8266WiFi.h>
 
 // Thong so WiFi
-const char* ssid = "STKHKT_01";
+const char* ssid = "chuongtd4";
 const char* password = "123456789";
 
 // Tao server

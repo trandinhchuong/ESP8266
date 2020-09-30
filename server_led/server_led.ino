@@ -1,9 +1,19 @@
+/*
+ ============================================================================
+ Name        : server_led.ino
+ Author      : https://www.facebook.com/embedded.4.0/
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
 
+ 
 #include <ESP8266WiFi.h>
 
 // Thong so WiFi
-const char* ssid = "chuongtd4";
-const char* password = "123456789";
+const char* ssid = "Embedded4.0";
+const char* password = "Embedded4.0";
 
 // Tao server
 WiFiServer server(80);
@@ -14,7 +24,7 @@ int output_pin = 5;
 void setup() {
 
   // Khoi dong Serial
-  Serial.begin(9600);
+  Serial.begin(115200);
   delay(10);
 
   // Khai bao GPIO5

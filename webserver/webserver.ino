@@ -2,15 +2,15 @@
 #include "ESP8266WebServer.h"
 ESP8266WebServer server(80);
 
-const char* ssid = "ESP8266";        
-const char* password = "123456789"; 
+const char* ssid = "Embedded4.0";        
+const char* password = "Embedded4.0"; 
 
 void setup() {
   Serial.begin(115200);
   WiFi.begin(ssid, password);  //Connect to the WiFi network
   while (WiFi.status() != WL_CONNECTED) {  //Wait for connection
     delay(500);
-    Serial.println("Waiting to connect…");
+    Serial.print(".");
   }
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());  //Print the local IP
@@ -24,9 +24,9 @@ void setup() {
 }
 void loop() {
   server.handleClient();         //Handling of incoming requests
-  Serial.print("IP address: ");
-  Serial.println(WiFi.localIP());  
+//  Serial.print("IP address: ");
+//  Serial.println(WiFi.localIP());  
 }
 void handleRootPath() {            //Handler for the rooth path
-  server.send(200, "text/plain", "Hello world");
+  server.send(200, "text/plain", "Hello Embedded4.0");
 }
